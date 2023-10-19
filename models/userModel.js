@@ -9,8 +9,13 @@ const userSchema = new mongoose.Schema({
     username: {
         type: String,
         required: [true, "Please Enter Your username"],
+    },
+    count: {
+        type: Number,
+        default: 10
     }
 
-});
+}
+    , { timestamps: true });
 
 module.exports = mongoose.model("User", userSchema);

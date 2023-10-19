@@ -11,7 +11,7 @@ exports.saveUser = async (req, res) => {
         let user = await User.findOne({ username });
         if (!user) {
             user = await User.create({
-                name, username
+                name, username,
             });
         }
         // sendToken(user, 201, res);
