@@ -54,3 +54,23 @@ exports.getAllUser = async (req, res, next) => {
         res.send(err)
     }
 }
+
+exports.getFollowerCount = async (req, res) => {
+    const { id } = req.body;
+
+    try {
+        const user = await User.findById({ _id: id });
+        res.status(200).json({
+            success: true,
+            user,
+            count: user.count
+        })
+    } catch (error) {
+
+        console.log(error);
+
+    }
+
+
+
+}
