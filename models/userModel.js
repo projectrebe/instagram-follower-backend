@@ -11,8 +11,7 @@ const userSchema = new mongoose.Schema({
         required: [true, "Please Enter Your username"],
     },
     count: {
-        type: Number,
-        default: 10
+        type: Number
     }
 
 }
